@@ -15,7 +15,7 @@ shape as the genomic-surveillance course.
 | **SEARCH** | A named reference with no DOI and no verification marker. Almost certainly a real paper; the specific volume, page or finding attributed to it was not confirmed. **Verify before citing in a manuscript.** |
 | **FLAGGED** | The author flagged uncertainty inline. Treat as a lead to chase, not a citation. |
 
-Last checked: **2026-08-28** with `tools/check_course_dois.py`.
+Last checked: **2026-09-05** with `tools/check_course_dois.py`.
 
 ---
 
@@ -213,3 +213,48 @@ It does not check that a paper *says* what the lesson claims it says. A DOI matc
 and year proves the citation points at the right paper, not that the finding attributed to it is
 the finding it reports. That is the second verification layer — `evidence.py` in the MCP server —
 and it has not been run over this course.
+
+---
+
+## Lessons 11 and 12 — the canon and the frontier (added 2026-09-05)
+
+These two lessons are, by design, almost entirely citation. Every DOI in them was
+resolved against Crossref **before** the lessons shipped, and the first author and year
+of each record were compared with what the lesson line claims.
+
+**Result: 39 DOIs across the whole course · 0 unresolvable · 0 misattributed.**
+
+The 24 DOIs new to these two lessons are therefore all **CROSSREF-VERIFIED**:
+
+Turing 1950 · Shannon 1948 · Rosenblatt 1958 · Samuel 1959 · Breiman 2001 (Two Cultures) ·
+Breiman 2001 (Random Forests) · Tibshirani 1996 · Cortes & Vapnik 1995 · Rumelhart 1986 ·
+Krizhevsky 2017 (CACM republication of AlexNet) · LeCun 2015 · He 2016 · Silver 2016 ·
+Jumper 2021 · Abramson 2024 · Rudin 2019 · Kapoor & Narayanan 2023 · Mitchell 2019 ·
+Gebru 2021 · Bender 2021 · Rajkomar 2019 · Gulshan 2016 · Moor 2023 · Singhal 2023.
+
+### Deliberately NOT verified — graded SEARCH
+
+The frontier is largely preprint literature. These carry arXiv identifiers, no DOI, and
+were **not** independently adjudicated. They are widely accepted within the field; the
+specific claim attributed to each was not confirmed here. Verify before citing in a
+manuscript.
+
+Vaswani 2017 (arXiv:1706.03762) · Brown 2020 (arXiv:2005.14165) · Kaplan 2020
+(arXiv:2001.08361) · Hoffmann 2022 (arXiv:2203.15556) · Ouyang 2022 (arXiv:2203.02155) ·
+Bommasani 2021 (arXiv:2108.07258) · Wei 2022 (arXiv:2206.07682) · Schaeffer 2023
+(arXiv:2304.15004) · Liang 2023 (arXiv:2211.09110) · Sculley 2015 (NeurIPS, no DOI).
+
+Books are cited by publisher and year and are not DOI-checkable: Minsky & Papert (1969) ·
+James, Witten, Hastie & Tibshirani, *An Introduction to Statistical Learning* ·
+Hastie, Tibshirani & Friedman (2009) · Efron & Hastie (2016) · Goodfellow, Bengio &
+Courville (2016) · Narayanan & Kapoor, *AI Snake Oil* (2024) · Mitchell (2019) ·
+Christian (2020).
+
+### A fix to the checker itself
+
+`tools/check_course_dois.py` was reporting nine false mismatches, from two causes:
+it read the date in an inline `✓ Verified 2026-08-21` marker as the publication year,
+and it read a bolded reading-tier verdict (`**READ.**`) as the author surname. Both are
+now stripped before author/year extraction. Flags fell from 9 to 1 — and the one that
+remains is the documented bolded-journal-name limitation on a line whose author and year
+are in fact correct.

@@ -111,6 +111,20 @@
       "title": "Two that worked",
       "bloom_level": "Evaluate",
       "hours": 0.75
+    },
+    {
+      "module": 11,
+      "section": "Reading the field",
+      "title": "The canon",
+      "bloom_level": "Analyze",
+      "hours": 1.5
+    },
+    {
+      "module": 12,
+      "section": "Reading the field",
+      "title": "The frontier",
+      "bloom_level": "Evaluate",
+      "hours": 1.5
     }
   ],
   "lessons": [
@@ -1965,6 +1979,136 @@
           ],
           "correct": 0,
           "explanation": "One field was fixed by changing the rules of evaluation, the other by changing what was measured. Neither required a methodological advance — and the institutional option is usually available and usually ignored, including for questions like elimination timelines or risk maps where several groups produce competing estimates."
+        }
+      ]
+    },
+    {
+      "id": "lesson-11",
+      "order": 11,
+      "section": "Reading the field",
+      "phase": 4,
+      "phase_title": "Reading the field",
+      "day": "Canon",
+      "emoji": "📚",
+      "time": 90,
+      "optional": false,
+      "title": "The canon — what was essential",
+      "subtitle": "The literature underneath the frame, graded READ / SKIM / KNOW",
+      "description": "Nine papers to read, fifteen to skim, the rest to know about. Weighted toward the statistical-learning core of 1996–2009, because that is the part written in your language about your argument.",
+      "topics": [
+        "The founding questions",
+        "The statistical learning core",
+        "The deep learning breakthrough",
+        "The reckoning: how ML fails",
+        "The health canon and reporting standards"
+      ],
+      "key_terms": [
+        "two cultures",
+        "algorithmic modelling",
+        "technical debt",
+        "interpretable by construction",
+        "leakage",
+        "TRIPOD+AI"
+      ],
+      "practical": "Read Breiman's 'Two Cultures' this week. Then write two paragraphs placing your own last modelling paper in one of his two cultures, and say what the other culture would have asked of it.",
+      "quiz": [
+        {
+          "question": "Breiman's 'two cultures' distinguishes data modelling from algorithmic modelling. Which culture does classical epidemiological regression belong to, and what does the other culture judge instead?",
+          "options": [
+            "Algorithmic; the other judges parameter significance",
+            "Data modelling; the other judges predictive accuracy on held-out data",
+            "Data modelling; the other judges model complexity",
+            "Neither — the split applies only to machine learning"
+          ],
+          "correct": 1,
+          "explanation": "Epidemiological regression assumes a stochastic data-generating model and interprets its parameters — Breiman's data modelling culture, which he estimated at 98% of statisticians. Algorithmic modelling treats the mechanism as unknown and judges only predictive accuracy, which is why an AUC arrives without coefficients."
+        },
+        {
+          "question": "Sculley et al.'s 'Hidden technical debt in machine learning systems' is on the READ tier. What is its central image, and why does it matter for a health system?",
+          "options": [
+            "A learning curve that plateaus, showing more data will not help",
+            "A tiny model box inside a large diagram of configuration, data collection, serving and monitoring",
+            "A confusion matrix at low prevalence",
+            "A comparison of open-source and proprietary tooling"
+          ],
+          "correct": 1,
+          "explanation": "The model is a small fraction of a real ML system; everything around it is infrastructure that accumulates debt. It is the clearest explanation of why a model that performs in a paper fails on deployment — the paper only ever contained the small box."
+        },
+        {
+          "question": "Why does this lesson insist the deep learning papers are SKIM while the 1996–2009 statistics papers are READ?",
+          "options": [
+            "The deep learning papers are less important to the field",
+            "The statistics literature is more recent",
+            "The statistics literature argues about prediction versus explanation in language the reader already speaks, and is what their appraisal work actually requires",
+            "Deep learning cannot be applied to health data"
+          ],
+          "correct": 2,
+          "explanation": "Nothing here claims deep learning matters less to the field. The claim is about this reader: the appraisal skills needed are argued out in the statistical-learning literature, which addresses the prediction-versus-explanation trade-off directly and assumes exactly this reader's training."
+        }
+      ]
+    },
+    {
+      "id": "lesson-12",
+      "order": 12,
+      "section": "Reading the field",
+      "phase": 4,
+      "phase_title": "Reading the field",
+      "day": "Frontier",
+      "emoji": "🔭",
+      "time": 90,
+      "optional": false,
+      "title": "The frontier — what is being developed",
+      "subtitle": "Transformers to foundation models, and how to appraise work that has not settled",
+      "description": "The transformer-to-LLM chain in five steps; foundation models in medicine; the 'emergence' debate as a measurement-scale artefact; the evaluation crisis; and a reading routine that takes under an hour a month.",
+      "topics": [
+        "Attention, scale and scaling laws",
+        "Foundation models in medicine",
+        "Emergence as a metric artefact",
+        "The evaluation crisis at the frontier",
+        "A sustainable reading routine"
+      ],
+      "key_terms": [
+        "transformer",
+        "scaling laws",
+        "RLHF",
+        "foundation model",
+        "benchmark contamination",
+        "emergent ability"
+      ],
+      "practical": "Take the loudest AI-in-health claim in your feed this month. Find the underlying paper or technical report, read its evaluation section first, and answer the four questions from Section 5. Write the answer in five sentences.",
+      "quiz": [
+        {
+          "question": "Wei et al. reported abruptly emerging abilities in large language models; Schaeffer et al. argued the discontinuity is largely an artefact. An artefact of what?",
+          "options": [
+            "Undisclosed training data",
+            "The choice of metric — harsh all-or-nothing scoring manufactures apparent jumps that continuous metrics do not show",
+            "Model size being measured in parameters rather than compute",
+            "Selective reporting of successful runs"
+          ],
+          "correct": 1,
+          "explanation": "Exact-match style metrics award nothing for partial improvement, so smooth underlying gains appear as a sudden jump at a threshold. It is the same error as dichotomising a continuous variable, which manufactures discontinuities that were never in the relationship."
+        },
+        {
+          "question": "Why does a foundation model break the assumption underneath TRIPOD+AI and similar frameworks?",
+          "options": [
+            "It is trained on text rather than tabular data",
+            "It has no training data to report",
+            "Those frameworks assume a single intended use, target population and outcome, and a foundation model has many",
+            "It cannot produce calibrated probabilities"
+          ],
+          "correct": 2,
+          "explanation": "Reporting and appraisal frameworks are built around the intended use. One artefact serving a hundred purposes has no single intended use, target population or outcome to declare — and the field has no agreed answer to this yet."
+        },
+        {
+          "question": "The lesson notes that clinical adoption of generative AI is tracking one property more than accuracy. Which?",
+          "options": [
+            "Cost",
+            "Reversibility — whether a human corrects the output as part of normal workflow",
+            "Model size",
+            "Regulatory approval speed"
+          ],
+          "correct": 1,
+          "explanation": "Ambient documentation and coding support went furthest not because they are the most accurate applications but because a human reviews the output anyway, so errors are caught cheaply. Diagnostic reasoning, where errors are less reversible, remains in pilots."
         }
       ]
     }

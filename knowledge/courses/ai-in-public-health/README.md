@@ -1,6 +1,6 @@
 # AI in Public Health & Epidemics
 
-**A living course. Core track COMPLETE 2026-08-21.** Status: active · Slug: `ai-in-public-health` · Opens at `/course/ai-in-public-health`
+**A living course. Core track COMPLETE 2026-08-21. Reading-the-field track added 2026-09-05.** Status: active · Slug: `ai-in-public-health` · Opens at `/course/ai-in-public-health`
 Started 2026-08-20. Replaces the earlier NTD-specific draft (scope was widened deliberately).
 
 Origin: NUST BMES-826 *Applied AI in Epidemiology*, assessed and declined —
@@ -39,13 +39,19 @@ the level of the weakest one:
 
 | Grade | Count | Meaning |
 |---|---|---|
-| **CROSSREF-VERIFIED** | 10 | DOI resolves *and* matches the claimed first author and year |
+| **CROSSREF-VERIFIED** | 34 | DOI resolves *and* matches the claimed first author and year |
 | **MARKED-VERIFIED** | 16 | Carried an inline `✓ Verified` marker from the authoring session |
 | **FLAGGED** | 3 | The author flagged uncertainty inline — a lead, not a citation |
 | **SEARCH** | 80 | Named reference, unconfirmed at the level of the specific number attributed to it |
 
 Re-check the DOIs at any time with `python3 ../../../tools/check_course_dois.py ai-in-public-health`.
-Checked 2026-08-28: **0 unresolvable, 0 misattributed.**
+Checked 2026-09-05: **39 DOIs, 0 unresolvable, 0 misattributed.**
+
+**Lessons 11 and 12** (`the canon` / `the frontier`) are a graded reading list covering AI and
+machine learning generally, not only in health — founding papers, the statistical-learning
+core, the deep learning breakthrough, the failure literature, and the frontier from
+transformers to foundation models in medicine. Every DOI in them was Crossref-checked
+before shipping. See `sources/source-ledger.md` for what was deliberately *not* verified.
 
 **What is still not checked** is whether each paper *says* what the lesson says it says. A DOI
 matching its author and year proves the citation points at the right paper, not that the finding

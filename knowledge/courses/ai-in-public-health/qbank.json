@@ -527,5 +527,53 @@
         "back": "What happens when it is wrong, and what sits downstream to catch it? Accuracy and external validation matter, but they are not what separated these two cases. Design the pathway first: a model behind a confirmatory test is forgiving of error in a way that a model acting as the answer never is."
       }
     ]
+  },
+  "lesson-11": {
+    "cards": [
+      {
+        "front": "Breiman's two cultures — name them and say which one you were trained in.",
+        "back": "Data modelling: assume a stochastic model generated the data, interpret its parameters. Algorithmic modelling: treat the mechanism as unknown, judge only predictive accuracy on held-out data. Classical epidemiology is the first; most AI claims come from the second. Breiman (2001), Statistical Science 16(3):199-231."
+      },
+      {
+        "front": "What is the central image of Sculley et al. (2015), 'Hidden technical debt in ML systems'?",
+        "back": "A tiny box labelled 'ML code' inside a large diagram of configuration, data collection, feature extraction, serving infrastructure and monitoring. It explains why a model that works in a paper fails in a health system: the paper contained only the small box."
+      },
+      {
+        "front": "What does Rudin (2019) argue about explaining black-box models in high-stakes settings?",
+        "back": "That the accuracy-versus-interpretability trade-off is largely a myth there, and post-hoc explanation is a poor substitute for a model that is interpretable by construction. Grounds for refusing a black box rather than merely disliking it. Nature Machine Intelligence 1:206-215."
+      },
+      {
+        "front": "Which pair of papers contains this whole course's argument in two citations?",
+        "back": "Gulshan et al. (2016, JAMA) — a deep learning system for diabetic retinopathy performing at specialist level in development data. Beede et al. (2020, CHI) — the field study of the same technology in Thai clinics, where image quality, connectivity and workflow decided the outcome. The gap between them is the course."
+      },
+      {
+        "front": "Name the two reporting standards to demand for a clinical AI claim.",
+        "back": "TRIPOD+AI (Collins et al., 2024, BMJ) for prediction models using regression or machine learning; CONSORT-AI (Liu et al., 2020, Nature Medicine) for trials of AI interventions. Ask for them by name."
+      }
+    ]
+  },
+  "lesson-12": {
+    "cards": [
+      {
+        "front": "The transformer-to-chatbot chain in five steps.",
+        "back": "1. Attention (Vaswani 2017) — parallelisable sequence modelling. 2. Scale (Brown 2020, GPT-3) — few-shot behaviour emerges from size plus data. 3. Scaling laws (Kaplan 2020; Hoffmann 2022 'Chinchilla') — smooth power laws, and the correction that big models were under-trained on data. 4. RLHF (Ouyang 2022) — instruction following. 5. Foundation models named as a category (Bommasani 2021)."
+      },
+      {
+        "front": "Why is 'emergence' in large language models a lesson in measurement rather than capability?",
+        "back": "Schaeffer et al. (2023) showed the abrupt jumps largely disappear under continuous metrics on the same models and data — harsh all-or-nothing scoring manufactures the discontinuity. Same error as dichotomising a continuous variable. Rule: when a capability claim depends on a threshold, ask what the metric is before asking whether the claim is true."
+      },
+      {
+        "front": "What property is clinical adoption of generative AI actually tracking?",
+        "back": "Reversibility, not accuracy. Ambient documentation and coding support are deployed because a human corrects the output as part of normal workflow; diagnostic reasoning and autonomous action, where errors are less reversible, remain in pilots regardless of reported performance."
+      },
+      {
+        "front": "Why does benchmark performance mean less for a foundation model than for a prediction model?",
+        "back": "Contamination: a model trained on most of the public internet may have seen the benchmark, and training data is usually undisclosed so this cannot be ruled out. Plus construct validity — a medical licensing exam was designed to discriminate among trained humans, so passing it is not evidence of clinical competence."
+      },
+      {
+        "front": "The connective thread from Obermeyer to large language models.",
+        "back": "The failure is the label, not the model. Obermeyer's algorithm optimised healthcare cost and was sold as health need. A language model optimises next-token prediction over human text and is sold as reasoning. In both cases the system does its actual objective very well; the gap is between the objective and the claim."
+      }
+    ]
   }
 }
