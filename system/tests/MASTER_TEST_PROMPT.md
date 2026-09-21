@@ -469,7 +469,7 @@ Once you have results from all 11 sections:
 1. Write a summary to `journal/sessions/test-report-{date}.md`
 2. Add any new failures as items to `system/config/feature-backlog.md`
 3. Mark this test prompt's date in the filename if you re-run it: `MASTER_TEST_PROMPT-{date}.md`
-4. If any persona test fails due to a missing agent: invoke `/hr-talent` with the gap description
+4. If any persona test fails due to a missing agent: `@hr-talent` with the gap description
 
 ---
 
